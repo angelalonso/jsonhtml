@@ -1,0 +1,24 @@
+/* Global Definitions */
+
+/* Font -----------------------------------------------------------------------------------------------------------*/
+@font-face {
+   font-family: 'Quando';
+   src: url('./Quando-Regular.ttf');
+}
+
+html {
+	background: #444;
+	font-size: 100%;
+	font-family: Quando;
+}
+
+/* Div */
+.title {
+	border: solid #fff;
+	color: #eee;
+	height: 3em; 
+	line-height: 3em; 
+	text-align: center;
+	vertical-align:middle;
+
+}
