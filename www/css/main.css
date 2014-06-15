@@ -6,19 +6,51 @@
    src: url('./Quando-Regular.ttf');
 }
 
+@font-face {
+   font-family: 'Hero';
+   src: url('./Hero.otf');
+}
+
+@font-face {
+   font-family: 'Ostrich';
+   src: url('./ostrich-regular.ttf');
+}
+
 html {
-	background: #444;
-	font-size: 100%;
-	font-family: Quando;
+	background: #fff;
+	font-family: Hero;
 }
 
 /* Div */
 .title {
-	border: solid #fff;
-	color: #eee;
-	height: 3em; 
-	line-height: 3em; 
+	border: solid #777;
+	color: #777;
+	font-size: 50px;
+	height: 60px; 
+	line-height: 67px; 
 	text-align: center;
 	vertical-align:middle;
+}
 
+/* Elements (alphabetical order) */
+
+button {
+	background-color: #ddd;
+	border: solid #777;
+	color: #777;
+	font-family: Hero;
+	font-size: 34px;
+	height: 2em; 
+	line-height: 2em; 
+	margin: 10px;
+	text-align: center;
+	vertical-align:middle;
+}
+
+button:hover {
+	border: solid #aaa;
+}
+
+button:active {
+	border: solid #000;
 }
