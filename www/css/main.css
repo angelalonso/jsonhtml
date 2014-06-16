@@ -100,6 +100,45 @@ input:active {
 	color: #ddd;
 }
 
+.todayentries_list_title {
+	background-color: #ddd;
+	border: solid #fff;
+	border-radius: 5px;
+	color: #700;
+	font-family: Ostrich;
+	font-size: 34px;
+	font-weight: bold;
+	height: 50px; 
+	line-height: 50px; 
+	text-align: center;
+	vertical-align: middle;
+}
+.todayentries_list_title:hover {
+	background-color: #700;
+	border: solid #aaa;
+	color: #ddd;
+}
+
+.weekentries_list_title {
+	background-color: #ddd;
+	border: solid #fff;
+	border-radius: 5px;
+	color: #cd7f32;
+	font-family: Ostrich;
+	font-size: 34px;
+	font-weight: bold;
+	height: 50px; 
+	line-height: 50px; 
+	text-align: center;
+	vertical-align: middle;
+}
+.weekentries_list_title:hover {
+	background-color: #e8a317;
+	border: solid #aaa;
+	color: #ddd;
+}
+
+
 /* BUTTON */
 /* Button to add a new entry */
 

@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 
     <link rel="stylesheet" href="css/main.css" />
-
+<!--
+    <script src="js/jquery/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery/jquery-1.10.2.js"></script>
+    <script src="js/jquery/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery/jquery-ui-1.10.4.custom.js"></script>
+-->
     <script src="js/page_main.js"></script>
-    <script src="js/confighandler.js"></script>
-
+    <script src="js/list_management.js"></script>
 </HEAD>
 <BODY>
     <div id="main_title" class="title"> main </div>
-    
+
+    <div id="data_todayentries_list" class="todayentries_list">
+        <div id="data_todayentries_list_title" class="todayentries_list_title" onclick="manage_entrylist('data_todayentries_list');"> Today </div>        
+    </div>
+
+    <div id="data_weekentries_list" class="weekentries_list">
+        <div id="data_weekentries_list_title" class="weekentries_list_title" onclick="manage_entrylist('data_weekentries_list');"> This Week </div>        
+    </div>
+
     <div id="main_footer_btns" class="table">
         <table cellpadding="0px" cellspacing="0px" class="Table_2btn">
             <tr class="Table_2btn_row">
@@ -31,9 +43,9 @@
             </tr>
         </table>        
     </div>
-<!--    
+   
     <script>
-        load_page_main();
+
+        show_list_entries("data_todayentries_list");
     </script>
--->
 </BODY>
