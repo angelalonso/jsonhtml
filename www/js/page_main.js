@@ -1,3 +1,4 @@
+//NEEDED, BUT DIFFERENT
 function load_page_main() {
 	html_title = 'MAIN'
 	document.getElementById('main_title').innerHTML = html_title;
@@ -8,9 +9,4 @@ function load_page_main() {
 	for (i = 0; i<main_elements.length;i++){
 		foo.appendChild(main_elements[i]);
 	}
-}
-
-function goto_next(site) {
-	site = site + ".html"
-	location.replace(site);
 }

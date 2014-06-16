@@ -5,18 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 
     <link rel="stylesheet" href="css/main.css" />
-
+<!--
+    <script src="js/jquery/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery/jquery-1.10.2.js"></script>
+    <script src="js/jquery/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery/jquery-ui-1.10.4.custom.js"></script>
+-->
     <script src="js/page_data.js"></script>
-    <script src="js/confighandler.js"></script>
 
 </HEAD>
 <BODY>
+    <div id="data_title" class="title"> data </div>
+
+    <div id="data_allentries_list" class="allentries_list">
+        <div id="data_allentries_list_title" class="allentries_list_title" onclick="manage_entrylist('data_allentries_list');"> Entries </div>        
+    </div>
+
+    <div id="data_footer_btns" class="table">
+        <table cellpadding="0px" cellspacing="0px" class="Table_2btn">
+            <tr class="Table_2btn_row">
+                <td class="Table_2btn_cell">
+                    <form method="LINK" action="index.html">
+                        <input class="btn_2main" type="submit" value="Back to Main">
+                    </form>
+                    <!-- <button type="submit" id="data_btn_2data" href="./index.html">Edit Data</button> -->
+                </td>
+                <td class="Table_2btn_cell">
+                    <form method="LINK" id"frm_addentry" href="javascript:void(0);">
+                        <input class="btn_addentry" id"btn_addentry" type="submit" value="Add a New Entry" onclick="add_entry();">
+                    </form>
+                    <!-- <button type="submit" id="data_btn_2data" href="./index.html">Edit Data</button> -->
+                </td>
+            </tr>
+        </table>        
+    </div>
+   
     <script>
-        firstload("data");
-    </script>
-    <div id="data_title" class="title"></div>
-    <div id="data_options"></div>
-    <script>
-        load_page_data();
+
+        show_list_entries();
     </script>
 </BODY>

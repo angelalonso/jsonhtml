@@ -21,9 +21,57 @@ html {
 	font-family: Hero;
 }
 
-/* Div */
+
+/* Generic elements (alphabetical order) */
+
+button {
+	background-color: #ddd;
+	border: double #fff;
+	border-radius: 5px;
+	color: #777;
+	font-family: Ostrich;
+	font-size: 34px;
+	font-weight: bold;
+	height: 2em; 
+	line-height: 2em; 
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+button:hover {
+	border: solid #ccc;
+}
+button:active {
+	border: solid #aaa;
+}
+
+input {
+	background-color: #ddd;
+	border: double #fff;
+	border-radius: 5px;
+	color: #777;
+	font-family: Ostrich;
+	font-size: 34px;
+	font-weight: bold;
+	height: 2em; 
+	line-height: 2em; 
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+input:hover {
+	border: solid #ccc;
+}
+input:active {
+	border: solid #aaa;
+}
+
+/* DIV */ 
+/* Div for titles */ 
+
 .title {
 	border: solid #777;
+	border-radius: 5px;
 	color: #777;
 	font-family: Ostrich;
 	font-size: 50px;
@@ -33,27 +81,58 @@ html {
 	vertical-align:middle;
 }
 
-/* Elements (alphabetical order) */
-
-button {
+.allentries_list_title {
 	background-color: #ddd;
-	border: double #fff;
-	color: #777;
+	border: solid #fff;
+	border-radius: 5px;
+	color: #007;
 	font-family: Ostrich;
 	font-size: 34px;
 	font-weight: bold;
-	height: 2em; 
-	line-height: 2em; 
-	margin-top: 10px;
+	height: 50px; 
+	line-height: 50px; 
 	text-align: center;
 	vertical-align: middle;
-	width: 50%;
+}
+.allentries_list_title:hover {
+	background-color: #007;
+	border: solid #aaa;
+	color: #ddd;
 }
 
-button:hover {
-	border: solid #ccc;
+/* BUTTON */
+/* Button to add a new entry */
+
+input.btn_addentry {
+	color: #070;
 }
 
-button:active {
+/* STRUCTURE */
+/* Button Table, 2 Buttons */
+
+table.Table_2btn {
+  	margin-top: 10px;
+    table-layout: fixed;
+    width: 100%;
+}
+    
+table.Table_2btn td.Table_2btn_cell {
+    width: 100%;
+}
+
+/* List, List of entries */
+
+li#list_entry {
+	border: solid #ddd;
+	color: #777;
+	font-family: Hero;
+	font-size: 24px;
+	height: 40px; 
+	line-height: 40px; 
+	list-style-type: none;
+	text-align: left;
+	vertical-align:middle;
+}
+li#list_entry:hover {
 	border: solid #aaa;
 }
