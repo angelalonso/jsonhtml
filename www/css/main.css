@@ -16,6 +16,16 @@
    src: url('./ostrich-regular.ttf');
 }
 
+@font-face {
+   font-family: 'Ostrich-bold';
+   src: url('./ostrich-bold.ttf');
+}
+
+@font-face {
+   font-family: 'Ostrich-black';
+   src: url('./ostrich-black.ttf');
+}
+
 html {
 	background: #fff;
 	font-family: Hero;
@@ -105,9 +115,8 @@ input:active {
 	border: solid #fff;
 	border-radius: 5px;
 	color: #700;
-	font-family: Ostrich;
+	font-family: Ostrich-black;
 	font-size: 34px;
-	font-weight: bold;
 	height: 50px; 
 	line-height: 50px; 
 	text-align: center;
@@ -124,9 +133,8 @@ input:active {
 	border: solid #fff;
 	border-radius: 5px;
 	color: #cd7f32;
-	font-family: Ostrich;
+	font-family: Ostrich-black;
 	font-size: 34px;
-	font-weight: bold;
 	height: 50px; 
 	line-height: 50px; 
 	text-align: center;
