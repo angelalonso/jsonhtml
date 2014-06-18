@@ -51,3 +51,19 @@ function manage_entrylist(list_2manage) {
 		clear_list_entries(list_2manage);
 	}
 }
+
+function show_entry_panel()
+{
+var newsletter_panel = document.getElementById('newsletter_panel');
+// w is a width of the newsletter panel
+w = 300;
+// h is a height of the newsletter panel
+h = 300;
+// get the x and y coordinates to center the newsletter panel
+xc = Math.round((document.body.clientWidth/2)-(w/2))
+yc = Math.round((document.body.clientHeight/2)-(h/2))
+// show the newsletter panel
+newsletter_panel.style.left = xc + "px";
+newsletter_panel.style.top = yc + "px";
+newsletter_panel.style.display = 'block';
+} 

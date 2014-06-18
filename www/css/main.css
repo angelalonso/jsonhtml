@@ -37,11 +37,9 @@ html {
 button {
 	background-color: #ddd;
 	border: double #fff;
-	border-radius: 5px;
 	color: #777;
 	font-family: Ostrich;
 	font-size: 34px;
-	font-weight: bold;
 	height: 2em; 
 	line-height: 2em; 
 	text-align: center;
@@ -58,11 +56,9 @@ button:active {
 input {
 	background-color: #ddd;
 	border: double #fff;
-	border-radius: 5px;
 	color: #777;
 	font-family: Ostrich;
 	font-size: 34px;
-	font-weight: bold;
 	height: 2em; 
 	line-height: 2em; 
 	text-align: center;
@@ -81,7 +77,6 @@ input:active {
 
 .title {
 	border: solid #777;
-	border-radius: 5px;
 	color: #777;
 	font-family: Ostrich;
 	font-size: 50px;
@@ -94,11 +89,9 @@ input:active {
 .allentries_list_title {
 	background-color: #ddd;
 	border: solid #fff;
-	border-radius: 5px;
 	color: #007;
 	font-family: Ostrich;
 	font-size: 34px;
-	font-weight: bold;
 	height: 50px; 
 	line-height: 50px; 
 	text-align: center;
@@ -107,15 +100,14 @@ input:active {
 .allentries_list_title:hover {
 	background-color: #007;
 	border: solid #aaa;
-	color: #ddd;
+	color: #fff;
 }
 
 .todayentries_list_title {
 	background-color: #ddd;
 	border: solid #fff;
-	border-radius: 5px;
 	color: #700;
-	font-family: Ostrich-black;
+	font-family: Ostrich;
 	font-size: 34px;
 	height: 50px; 
 	line-height: 50px; 
@@ -125,15 +117,14 @@ input:active {
 .todayentries_list_title:hover {
 	background-color: #700;
 	border: solid #aaa;
-	color: #ddd;
+	color: #fff;
 }
 
 .weekentries_list_title {
 	background-color: #ddd;
 	border: solid #fff;
-	border-radius: 5px;
 	color: #cd7f32;
-	font-family: Ostrich-black;
+	font-family: Ostrich;
 	font-size: 34px;
 	height: 50px; 
 	line-height: 50px; 
@@ -143,7 +134,7 @@ input:active {
 .weekentries_list_title:hover {
 	background-color: #e8a317;
 	border: solid #aaa;
-	color: #ddd;
+	color: #fff;
 }
 
 

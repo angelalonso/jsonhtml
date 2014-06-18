@@ -30,7 +30,7 @@
             <tr class="Table_2btn_row">
                 <td class="Table_2btn_cell">
                     <form method="LINK" ACTION="#">
-                        <input class="btn_addentry" type="submit" value="Add Entry">
+                        <input class="btn_addentry" type="submit" value="Add Entry" onclick="show_entry_panel();">
                     </form>
                     <!-- <button type="submit" id="data_btn_2data" href="./index.html">Edit Data</button> -->
                 </td>
@@ -43,7 +43,121 @@
             </tr>
         </table>        
     </div>
+
+    <!-- http://www.mysamplecode.com/2011/05/javascript-popup-box-with-background.html -->
    
+<style type="text/css">
+ 
+#flyBox {
+    position: fixed;
+    top:0px;
+    left:0px;
+    z-index: 998;
+    height: 100%;
+    width: 100%;
+    background-image: url(http://i1122.photobucket.com/albums/l523/Long_Islander/backgroundFlyBox.png);
+    display: none;
+}
+#flyBox .borderWindow {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000;
+    text-align: left;
+    background-image: url(http://i1122.photobucket.com/albums/l523/Long_Islander/backgroundFlyBox.png);
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    padding: 12px;
+}
+#flyBox .container {
+    position: relative;
+}
+#flyBox #closeButton {
+    position:absolute;
+    top: -15px;
+    right: -15px;
+}
+#flyBox .content {
+    background-color: #FFF;
+    overflow:hidden;
+}
+.colheadingL {
+ background-color: #383837;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 12px;
+ font-weight: bold;
+ color: #FFFFFF;
+ padding: 2px;
+ text-align: left;
+}
+-->
+</style>
+ 
+<script language="JavaScript">
+ 
+function displayPopup(alert_MSG) {
+    
+    var theDetail = document.getElementById('flyBox');
+        theDetail.style.display="block";
+}
+ 
+function closePopup(alert_MSG) {
+    
+    var theDetail = document.getElementById('flyBox');
+    
+    if (theDetail.style.display=="block") {
+        theDetail.style.display="none";
+    }
+}
+</script>
+ 
+<a href="javascript:displayPopup('flyBox')">Learn more about JavaScript!</a>
+ 
+<div id="flyBox" style="display:none;">
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+ 
+            <td align="center">
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+        
+                        <td class="borderWindow">
+                            <div class="container">
+                                <div id="closeButton"><a href="javascript:closePopup('flyBox')"><img src="http://i1122.photobucket.com/albums/l523/Long_Islander/flyBoxClose.png" width="28" height="28" alt="Close Button" border="0" /></a></div>
+                                <div class="content">
+                                    <table width="600" border="0" cellspacing="20" cellpadding="0">
+<tr>
+<td>
+<div id="myMessageBox" name="myMessageBox">
+<table width="100%"  border="0" cellspacing="2" cellpadding="0">
+<tr>
+<td class="colheadingL">More Info about JavaScript</td>
+</tr>
+        <tr>
+            <td class="text1">
+    JavaScript's use in applications outside web pages for example in PDF documents, site specific browsers and desktop widgets is also significant. Newer and faster Javascript VMs and frameworks built upon them (notably Node.js) have also increased the popularity of Javascript for server side web apps.
+ 
+    JavaScript uses syntax influenced by that of C. JavaScript copies many names and naming conventions from Java, but the two languages are otherwise unrelated and have very different semantics. The key design principles within JavaScript are taken from the Self and Scheme programming languages.
+ 
+            </td>
+        </tr>
+</table>
+</div>
+</td>
+</tr>
+ 
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+ 
+        </tr>
+    </table>
+</div>
+
+
     <script>
 
         show_list_entries("data_todayentries_list");
