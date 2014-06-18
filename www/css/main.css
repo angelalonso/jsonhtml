@@ -76,8 +76,8 @@ input:active {
 /* Div for titles */ 
 
 .title {
-	border: solid #777;
-	color: #777;
+	background-color: #444;
+	color: #fff;
 	font-family: Ostrich;
 	font-size: 50px;
 	height: 60px; 
@@ -88,53 +88,92 @@ input:active {
 
 .allentries_list_title {
 	background-color: #ddd;
-	border: solid #fff;
 	color: #007;
 	font-family: Ostrich;
 	font-size: 34px;
 	height: 50px; 
 	line-height: 50px; 
+	margin-top: 4px;
 	text-align: center;
 	vertical-align: middle;
 }
 .allentries_list_title:hover {
 	background-color: #007;
-	border: solid #aaa;
 	color: #fff;
 }
 
 .todayentries_list_title {
 	background-color: #ddd;
-	border: solid #fff;
 	color: #700;
 	font-family: Ostrich;
 	font-size: 34px;
 	height: 50px; 
 	line-height: 50px; 
+	margin-top: 4px;
 	text-align: center;
 	vertical-align: middle;
 }
 .todayentries_list_title:hover {
 	background-color: #700;
-	border: solid #aaa;
 	color: #fff;
 }
 
 .weekentries_list_title {
 	background-color: #ddd;
-	border: solid #fff;
 	color: #cd7f32;
 	font-family: Ostrich;
 	font-size: 34px;
 	height: 50px; 
 	line-height: 50px; 
+	margin-top: 4px;
 	text-align: center;
 	vertical-align: middle;
 }
 .weekentries_list_title:hover {
 	background-color: #e8a317;
-	border: solid #aaa;
 	color: #fff;
+}
+
+/* Div for the flyboxes */
+#flyBox {
+    position: fixed;
+    top:0px;
+    left:0px;
+    z-index: 998;
+    height: 100%;
+    width: 100%;
+    background-image: url('./bgdarktransp.png');
+    display: none;
+}
+#flyBox .borderWindow {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000;
+    text-align: left;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    padding: 12px;
+}
+#flyBox .container {
+    position: relative;
+}
+#flyBox #closeButton {
+    position:absolute;
+    top: -15px;
+    right: -15px;
+}
+#flyBox .content {
+    background-color: #FFF;
+    overflow:hidden;
+}
+.colheadingL {
+ background-color: #383837;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 12px;
+ font-weight: bold;
+ color: #FFFFFF;
+ padding: 2px;
+ text-align: left;
 }
 
 
