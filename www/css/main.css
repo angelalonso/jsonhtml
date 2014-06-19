@@ -134,8 +134,8 @@ input:active {
 	color: #fff;
 }
 
-/* Div for the flyboxes */
-#flyBox {
+/* Div for the popup boxes */
+#popup_box {
     position: fixed;
     top:0px;
     left:0px;
@@ -145,35 +145,30 @@ input:active {
     background-image: url('./bgdarktransp.png');
     display: none;
 }
-#flyBox .borderWindow {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    color: #000;
-    text-align: left;
-    -moz-border-radius: 12px;
-    -webkit-border-radius: 12px;
-    padding: 12px;
+#popup_box .container {
+    background-color: #fff;
+	margin: 10px;
+	min-height: 95%;
 }
-#flyBox .container {
-    position: relative;
+#popup_box .header {
+    background-color: #fff;
+	font-family: Ostrich;
+	font-size: 30px;
+	height: 36px; 
+	line-height: 38px; 
+	text-align: center;
 }
-#flyBox #closeButton {
+#popup_box .content {
+    background-color: #fff;
+	min-height: 100%;
+	min-width: 90%;
+	margin: 20px;
+	margin-top: 0px;
+}
+#popup_box #btn_close {
     position:absolute;
-    top: -15px;
-    right: -15px;
-}
-#flyBox .content {
-    background-color: #FFF;
-    overflow:hidden;
-}
-.colheadingL {
- background-color: #383837;
- font-family: Arial, Helvetica, sans-serif;
- font-size: 12px;
- font-weight: bold;
- color: #FFFFFF;
- padding: 2px;
- text-align: left;
+    right: 0px;
+    top: 0px;
 }
 
 

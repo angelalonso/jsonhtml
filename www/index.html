@@ -29,7 +29,7 @@
         <table cellpadding="0px" cellspacing="0px" class="Table_2btn">
             <tr class="Table_2btn_row">
                 <td class="Table_2btn_cell">
-                    <form method="LINK" ACTION="javascript:displayPopup('flyBox')">
+                    <form method="LINK" ACTION="javascript:displayPopup('popup_box')">
                         <input class="btn_addentry" type="submit" value="Add Entry" >
                     </form>
                     <!-- <button type="submit" id="data_btn_2data" href="./index.html">Edit Data</button> -->
@@ -46,51 +46,18 @@
 
     <!-- http://www.mysamplecode.com/2011/05/javascript-popup-box-with-background.html -->
  
-
-    <div id="flyBox" style="display:none;">
-        <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-     
-                <td align="center">
-                    <table border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-            
-                            <td class="borderWindow">
-                                <div class="container">
-                                    <div id="closeButton"><a href="javascript:closePopup('flyBox')"><img src="http://i1122.photobucket.com/albums/l523/Long_Islander/flyBoxClose.png" width="28" height="28" alt="Close Button" border="0" /></a></div>
-                                    <div class="content">
-                                        <table width="600" border="0" cellspacing="20" cellpadding="0">
-                                        <tr>
-                                            <td>
-                                            <div id="myMessageBox" name="myMessageBox">
-                                            <table width="100%"  border="0" cellspacing="2" cellpadding="0">
-                                                <tr>
-                                                    <td class="colheadingL">More Info about JavaScript</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text1">
-    JavaScript's use in applications outside web pages for example in PDF documents, site specific browsers and desktop widgets is also...blablabla
- 
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            </div>
-                                            </td>
-                                        </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </div>
+	<div id="popup_box" style="display:none;">
+		<div class="container">
+				<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+					<td width="100%" ><div class="header">New Entry</div></td>
+					<td><div id="btn_close"><a href="javascript:closePopup('popup_box')"><img src="css/btnclose.png" width="28" height="28" alt="Close Button" border="0" /></a></div></td>
+				</tr></table>	
+                <div class="content">Nothing to see here...</div>
+		</div>
+	</div>
 
 
     <script>
-
         show_list_entries("data_todayentries_list");
     </script>
 </BODY>

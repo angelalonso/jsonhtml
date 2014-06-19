@@ -55,12 +55,12 @@ function manage_entrylist(list_2manage) {
 
 
 function displayPopup(popup_div) {
-    var div2display = document.getElementById('flyBox');
+    var div2display = document.getElementById(popup_div);
     div2display.style.display="block";
 }
  
 function closePopup(popup_div) {
-    var div2close = document.getElementById('flyBox');
+    var div2close = document.getElementById(popup_div);
     if (div2close.style.display=="block") {
         div2close.style.display="none";
     }
