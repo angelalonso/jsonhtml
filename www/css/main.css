@@ -164,20 +164,43 @@ input:active {
 	min-width: 90%;
 	margin: 20px;
 	margin-top: 0px;
-}
-#popup_box #btn_close {
+}#popup_box #btn_close {
     position:absolute;
     right: 0px;
     top: 0px;
 }
 
 
-/* BUTTON */
+
+/* BUTTON INPUT*/
 /* Button to add a new entry */
 
 input.btn_addentry {
 	color: #070;
 }
+
+/* Button to close the new entry popup  REUSE???  */
+input.btn_save {
+	background-color: #ddd;
+	color: #070;
+}
+input.btn_save:hover{
+	background-color: #070;
+	color: #fff;
+}
+
+/* Button to close the new entry popup  REUSE???  */
+input.btn_close {
+	background-color: #ddd;
+	color: #700;
+}
+input.btn_close:hover{
+	background-color: #700;
+	color: #fff;
+}
+
+
+
 
 /* STRUCTURE */
 /* Button Table, 2 Buttons */
