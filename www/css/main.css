@@ -209,7 +209,38 @@ input.btn_close:hover{
 	color: #fff;
 }
 
-
+/* Classes */
+/* Calendar elements*/
+.calendar_current {
+	width: 210px;
+}
+.calendar_current td {
+	background-color: #fff;
+	color: #000;
+	text-align: center;
+}
+.calendar_current td.cal_prev {
+	background-color: #ccc;
+	border: double #fff;
+	width: 30px;
+}
+.calendar_current td.cal_next {
+	background-color: #ccc;
+	border: double #fff;
+	width: 30px;
+}
+.calendar_weekdays td {
+	background-color: #fff;
+	color: #777;
+	text-align: center;
+	width: 30px;
+}
+.calendar_days td {
+	background-color: #fff;
+	color: #000;
+	text-align: center;
+	width: 30px;
+}
 
 
 /* STRUCTURE */

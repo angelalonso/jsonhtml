@@ -55,9 +55,13 @@ function manage_entrylist(list_2manage) {
 
 // POPUP
 
-function displayPopup(popup_div) {
+function displayPopup(popup_div,calendar_1) {
+	todayArray = day_GUIarray(new Date());
+	updateCalHeader(calendar_1,todayArray);    
     var div2display = document.getElementById(popup_div);
     div2display.style.display="block";
+
+
 }
  
 function closePopup(popup_div) {
@@ -71,14 +75,20 @@ function closePopup(popup_div) {
 // CALENDAR
 
 function showCalChart(cal_table,action) {
-	today = today_GUIarray();
-	table = document.getElementById(cal_table);
-
+	// get current date shown in the header
+	date_array = [];
+	date_array.push(document.getElementById(cal_table + '_day').innerHTML);
+	date_array.push(document.getElementById(cal_table + '_month').innerHTML);
+	date_array.push(document.getElementById(cal_table + '_year').innerHTML);
+	
 	switch (action)
 	{
 		case 'chart':
 			//table.deleteRow(0);
-			buildCalTable(table);
+
+			table_titles = document.getElementById(cal_table + "_week");
+			table = document.getElementById(cal_table + "_chart");
+			buildCalTable(table,table_titles,date_array);
 		break;
 		case 'previous':
 			alert("previous!");
@@ -89,31 +99,53 @@ function showCalChart(cal_table,action) {
 	}
 }
 
-function buildCalTable(table) {
-	var newrows = []
-	var row = table.insertRow(table.rows.length);
-	for (i = 1; i< 31; i++) {
-		col = (i-1) % 7;
-		if (col == 0){
-			var row = table.insertRow(table.rows.length);
-			var newcell = row.insertCell(col);
-			var newText  = document.createTextNode("  ");
+function updateCalHeader(element,date_array) {
+	document.getElementById(element + '_day').innerHTML = date_array[0];
+	document.getElementById(element + '_month').innerHTML = date_array[1];
+	document.getElementById(element + '_year').innerHTML = date_array[2];
+}
+
+function buildCalTable(table,week_days,date_array) {
+	open_chart = table.getElementsByTagName('tr').length;
+	if (open_chart <= 0) {
+		weekdays = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+		var week_row = week_days.insertRow(week_days.rows.length);
+		for (i = 0; i< 7; i++) {
+			var newcell = week_row.insertCell(i);
+			var newText = document.createTextNode(weekdays[i]);
 			newcell.appendChild(newText);
 		}
-		var newcell = row.insertCell(col);
-		var newText  = document.createTextNode(i);
-		newcell.appendChild(newText);
 
+		test = new Date(date_array[2], date_array[1], 1);
+		//alert(test.getDay());
+		var newrows = []
+		var row = table.insertRow(table.rows.length);
+		for (i = 1; i<= 31; i++) {
+			col = (i-1) % 7;
+			if (col == 0){
+				var row = table.insertRow(table.rows.length);
+			}
+			var newcell = row.insertCell(col);
+			var newText  = document.createTextNode(i);
+			newcell.appendChild(newText);
+
+		}
+	} else {
+		while(week_days.hasChildNodes()) {
+		   week_days.removeChild(week_days.firstChild);
+		}
+		while(table.hasChildNodes()) {
+		   table.removeChild(table.firstChild);
+		}
 	}
 }
 
-function today_GUIarray() {
+function day_GUIarray(thisday) {
 	// get current date
-	date_now = [];
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth()+1; //January is 0!
-	var yyyy = today.getFullYear();
+	date_array = [];
+	var dd = thisday.getDate();
+	var mm = thisday.getMonth()+1; //January is 0!
+	var yyyy = thisday.getFullYear();
 
 	if(dd<10) {
 	    dd='0'+dd
@@ -122,9 +154,9 @@ function today_GUIarray() {
 	if(mm<10) {
 	    mm='0'+mm
 	} 
-	date_now.push(dd);
-	date_now.push(mm);
-	date_now.push(yyyy);
+	date_array.push(dd);
+	date_array.push(mm);
+	date_array.push(yyyy);
 
-	return date_now;
+	return date_array;
 }
