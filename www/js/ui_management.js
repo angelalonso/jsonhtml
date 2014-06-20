@@ -53,6 +53,7 @@ function manage_entrylist(list_2manage) {
 }
 
 
+// POPUP
 
 function displayPopup(popup_div) {
     var div2display = document.getElementById(popup_div);
@@ -64,4 +65,66 @@ function closePopup(popup_div) {
     if (div2close.style.display=="block") {
         div2close.style.display="none";
     }
+}
+
+
+// CALENDAR
+
+function showCalChart(cal_table,action) {
+	today = today_GUIarray();
+	table = document.getElementById(cal_table);
+
+	switch (action)
+	{
+		case 'chart':
+			//table.deleteRow(0);
+			buildCalTable(table);
+		break;
+		case 'previous':
+			alert("previous!");
+		break;
+		case 'next':
+			alert("next!");
+		break;
+	}
+}
+
+function buildCalTable(table) {
+	var newrows = []
+	var row = table.insertRow(table.rows.length);
+	for (i = 1; i< 31; i++) {
+		col = (i-1) % 7;
+		if (col == 0){
+			var row = table.insertRow(table.rows.length);
+			var newcell = row.insertCell(col);
+			var newText  = document.createTextNode("  ");
+			newcell.appendChild(newText);
+		}
+		var newcell = row.insertCell(col);
+		var newText  = document.createTextNode(i);
+		newcell.appendChild(newText);
+
+	}
+}
+
+function today_GUIarray() {
+	// get current date
+	date_now = [];
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+
+	if(dd<10) {
+	    dd='0'+dd
+	} 
+
+	if(mm<10) {
+	    mm='0'+mm
+	} 
+	date_now.push(dd);
+	date_now.push(mm);
+	date_now.push(yyyy);
+
+	return date_now;
 }

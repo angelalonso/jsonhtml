@@ -52,10 +52,20 @@
 					<td width="100%" ><div class="header">New Entry</div></td>
 				</tr></table>	
                 <!--https://developers.google.com/web/fundamentals/input/form/-->
-                Month: <input type="month" class="month_in" id"month_in" /><br /><br />
+                Date:
+                <table id="popup_date_in" border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td class="cal_prev" onclick="javascript:showCalChart('popup_date_in','previous')"> <- </td>
+                        <td class="cal_day" onclick="javascript:showCalChart('popup_date_in','chart')">Day</td>
+                        <td class="cal_month" onclick="javascript:showCalChart('popup_date_in','chart')">Month</td>
+                        <td class="cal_year" onclick="javascript:showCalChart('popup_date_in','chart')">Year</td>
+                        <td class="cal_next" onclick="javascript:showCalChart('popup_date_in','next')"> -> </td>
+                        
+                    </tr>
+                </table><!--
                 Date: <input type="date" class="date_in" id"date_in" /><br /><br />
-                Time: <input type="time" class="time_in" id"time_in" /><br /><br />
-
+                Time: <input type="time" class="time_in" id"time_in" /><br /><br /> 
+                -->
 
                 <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" >
                     <tr>
