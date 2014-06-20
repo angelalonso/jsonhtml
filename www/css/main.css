@@ -12,6 +12,16 @@
 }
 
 @font-face {
+   font-family: 'Oswald';
+   src: url('./Oswald-Regular.otf');
+}
+
+@font-face {
+   font-family: 'Oswald-light';
+   src: url('./Oswald-Light.otf');
+}
+
+@font-face {
    font-family: 'Ostrich';
    src: url('./ostrich-regular.ttf');
 }
@@ -28,7 +38,7 @@
 
 html {
 	background: #fff;
-	font-family: Hero;
+	font-family: Oswald-light;
 }
 
 
@@ -220,7 +230,7 @@ table.Table_2btn td.Table_2btn_cell {
 li#list_entry {
 	border: solid #ddd;
 	color: #777;
-	font-family: Hero;
+	font-family: Oswald-light;
 	font-size: 24px;
 	height: 40px; 
 	line-height: 40px; 
