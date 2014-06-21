@@ -80,21 +80,46 @@ function showCalChart(cal_table,action) {
 	date_array.push(document.getElementById(cal_table + '_day').innerHTML);
 	date_array.push(document.getElementById(cal_table + '_month').innerHTML);
 	date_array.push(document.getElementById(cal_table + '_year').innerHTML);
+	table_titles = document.getElementById(cal_table + "_week");
+	table = document.getElementById(cal_table + "_chart");
+	table_months = document.getElementById(cal_table + "_months");
 	
 	switch (action)
 	{
 		case 'chart':
-			//table.deleteRow(0);
-
-			table_titles = document.getElementById(cal_table + "_week");
-			table = document.getElementById(cal_table + "_chart");
-			buildCalTable(table,table_titles,date_array);
+			buildCalTable(table,table_titles,table_months,date_array);
 		break;
 		case 'previous':
-			alert("previous!");
+			date_array = prepare_date(date_array,-1,'day');
+			document.getElementById(cal_table + '_day').innerHTML = date_array[0];
+			document.getElementById(cal_table + '_month').innerHTML = date_array[1];
+			document.getElementById(cal_table + '_year').innerHTML = date_array[2];
+			buildCalTable(table,table_titles,table_months,date_array);
+			buildCalTable(table,table_titles,table_months,date_array);
 		break;
 		case 'next':
-			alert("next!");
+			date_array = prepare_date(date_array,1,'day');
+			document.getElementById(cal_table + '_day').innerHTML = date_array[0];
+			document.getElementById(cal_table + '_month').innerHTML = date_array[1];
+			document.getElementById(cal_table + '_year').innerHTML = date_array[2];
+			buildCalTable(table,table_titles,table_months,date_array);
+			buildCalTable(table,table_titles,table_months,date_array);
+		break;
+		case 'prev_month':
+			date_array = prepare_date(date_array,-1,'month');
+			document.getElementById(cal_table + '_day').innerHTML = date_array[0];
+			document.getElementById(cal_table + '_month').innerHTML = date_array[1];
+			document.getElementById(cal_table + '_year').innerHTML = date_array[2];
+			buildCalTable(table,table_titles,table_months,date_array);
+			buildCalTable(table,table_titles,table_months,date_array);
+		break;
+		case 'next_month':
+			date_array = prepare_date(date_array,1,'month');
+			document.getElementById(cal_table + '_day').innerHTML = date_array[0];
+			document.getElementById(cal_table + '_month').innerHTML = date_array[1];
+			document.getElementById(cal_table + '_year').innerHTML = date_array[2];
+			buildCalTable(table,table_titles,table_months,date_array);
+			buildCalTable(table,table_titles,table_months,date_array);
 		break;
 	}
 }
@@ -105,7 +130,7 @@ function updateCalHeader(element,date_array) {
 	document.getElementById(element + '_year').innerHTML = date_array[2];
 }
 
-function buildCalTable(table,week_days,date_array) {
+function buildCalTable(table,week_days,month_change,date_array) {
 	open_chart = table.getElementsByTagName('tr').length;
 	if (open_chart <= 0) {
 		weekdays = ['Su','Mo','Tu','We','Th','Fr','Sa'];
@@ -116,19 +141,26 @@ function buildCalTable(table,week_days,date_array) {
 			newcell.appendChild(newText);
 		}
 
-		test = new Date(date_array[2], date_array[1], 1);
-		//alert(test.getDay());
-		var newrows = []
+		months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+		document.getElementById(month_change.id + '_name').innerHTML = months[parseInt(date_array[1]-1)];
+		month_change.style.display = "";
+		//childcells = month_row.getElementsByTagName("td");
+		//alert(childcells.length);
+
+		first_day_month = new Date(date_array[2], date_array[1] -1, 1);
+		empty_cells = first_day_month.getDay();
 		var row = table.insertRow(table.rows.length);
-		for (i = 1; i<= 31; i++) {
+		
+		for (i = 1; i<= 31+empty_cells; i++) {
 			col = (i-1) % 7;
 			if (col == 0){
 				var row = table.insertRow(table.rows.length);
 			}
 			var newcell = row.insertCell(col);
-			var newText  = document.createTextNode(i);
-			newcell.appendChild(newText);
-
+			if (i > empty_cells) {
+				var newText  = document.createTextNode(i - empty_cells);
+				newcell.appendChild(newText);
+			}
 		}
 	} else {
 		while(week_days.hasChildNodes()) {
@@ -137,7 +169,26 @@ function buildCalTable(table,week_days,date_array) {
 		while(table.hasChildNodes()) {
 		   table.removeChild(table.firstChild);
 		}
+		if (month_change.style.display!="none") {
+			month_change.style.display="none";
+		}
 	}
+}
+
+function prepare_date(day_array,operation,field) {
+	switch (field)
+	{
+		case 'day':
+			new_day = new Date(parseInt(day_array[2]), parseInt(day_array[1]) -1, parseInt(day_array[0]) + operation);
+		break;
+		case 'month':
+			new_day = new Date(parseInt(day_array[2]), parseInt(day_array[1]) -1 + operation, parseInt(day_array[0]));
+		break;
+		case 'year':
+			new_day = new Date(parseInt(day_array[2]) + operation, parseInt(day_array[1]) -1, parseInt(day_array[0]));
+		break;
+	}
+	return day_GUIarray(new_day);
 }
 
 function day_GUIarray(thisday) {

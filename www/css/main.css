@@ -211,23 +211,27 @@ input.btn_close:hover{
 
 /* Classes */
 /* Calendar elements*/
-.calendar_current {
+.calendar_current, .calendar_months {
 	width: 210px;
 }
-.calendar_current td {
+.calendar_current td, .calendar_months td {
 	background-color: #fff;
 	color: #000;
 	text-align: center;
 }
-.calendar_current td.cal_prev {
+td.cal_prev{
 	background-color: #ccc;
 	border: double #fff;
-	width: 30px;
+	line-height: 40px;
+	vertical-align:middle;
+	width: 40px;
 }
-.calendar_current td.cal_next {
+td.cal_next{
 	background-color: #ccc;
 	border: double #fff;
-	width: 30px;
+	line-height: 40px;
+	vertical-align:middle;
+	width: 40px;
 }
 .calendar_weekdays td {
 	background-color: #fff;
