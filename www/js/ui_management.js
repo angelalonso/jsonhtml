@@ -144,22 +144,31 @@ function buildCalTable(table,week_days,month_change,date_array) {
 		months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 		document.getElementById(month_change.id + '_name').innerHTML = months[parseInt(date_array[1]-1)];
 		month_change.style.display = "";
-		//childcells = month_row.getElementsByTagName("td");
-		//alert(childcells.length);
 
 		first_day_month = new Date(date_array[2], date_array[1] -1, 1);
+		last_day_month = parseInt(new Date(date_array[2], date_array[1], 0).getDate());
 		empty_cells = first_day_month.getDay();
 		var row = table.insertRow(table.rows.length);
 		
-		for (i = 1; i<= 31+empty_cells; i++) {
+		for (i = 1; i<= last_day_month+empty_cells; i++) {
 			col = (i-1) % 7;
 			if (col == 0){
 				var row = table.insertRow(table.rows.length);
 			}
 			var newcell = row.insertCell(col);
 			if (i > empty_cells) {
-				var newText  = document.createTextNode(i - empty_cells);
-				newcell.appendChild(newText);
+				var daybutton = document.createElement("input");
+				daybutton.type = "button";
+				daybutton.value = i - empty_cells;
+				daybutton.id = table.id + "_" + daybutton.value;
+				daybutton.onclick = function(){
+					naming = this.id.split("_");
+					day_shower = this.id.replace('_'+naming[naming.length-2]+'_'+naming[naming.length-1],'');
+					document.getElementById(day_shower + '_day').innerHTML = this.value;
+				}
+				//context.appendChild(button);
+				//var newText  = document.createTextNode(i - empty_cells);
+				newcell.appendChild(daybutton);
 			}
 		}
 	} else {

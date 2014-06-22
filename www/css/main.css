@@ -212,7 +212,7 @@ input.btn_close:hover{
 /* Classes */
 /* Calendar elements*/
 .calendar_current, .calendar_months {
-	width: 210px;
+	width: 238px;
 }
 .calendar_current td, .calendar_months td {
 	background-color: #fff;
@@ -237,13 +237,14 @@ td.cal_next{
 	background-color: #fff;
 	color: #777;
 	text-align: center;
-	width: 30px;
+	width: 34px;
 }
-.calendar_days td {
+.calendar_days td input {
 	background-color: #fff;
 	color: #000;
+	font-size: 30px;
 	text-align: center;
-	width: 30px;
+	width: 34px;
 }
 
 
