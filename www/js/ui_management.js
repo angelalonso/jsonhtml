@@ -71,6 +71,23 @@ function closePopup(popup_div) {
     }
 }
 
+function savePopup(popup_div) {
+    switch (popup_div)
+    {
+    	case 'popup_box':
+    		subject = "";
+    		start_date = document.getElementById('popup_date_in_day').innerHTML+"/"+document.getElementById('popup_date_in_month').innerHTML+"/"+document.getElementById('popup_date_in_year').innerHTML;
+    		start_time = "21:00";
+    		end_date = start_date;
+    		end_time = "";
+    		all_day_event = "False";
+    		description = "";
+    		alert(start_date);
+    		LS_add_entry(subject,start_date,start_time,end_date,end_time,all_day_event,description);
+    	break;
+    }
+	closePopup(popup_div);
+}
 
 // CALENDAR
 
@@ -124,20 +141,20 @@ function showCalChart(cal_table,action) {
 	}
 }
 
-function updateCalHeader(element,date_array) {
-	document.getElementById(element + '_day').innerHTML = date_array[0];
-	document.getElementById(element + '_month').innerHTML = date_array[1];
-	document.getElementById(element + '_year').innerHTML = date_array[2];
+function updateCalHeader(calendar_element,date_array) {
+	document.getElementById(calendar_element + '_day').innerHTML = date_array[0];
+	document.getElementById(calendar_element + '_month').innerHTML = date_array[1];
+	document.getElementById(calendar_element + '_year').innerHTML = date_array[2];
 }
 
-function buildCalTable(table,week_days,month_change,date_array) {
-	open_chart = table.getElementsByTagName('tr').length;
+function buildCalTable(cal_table,week_days,month_change,date_array) {
+	open_chart = cal_table.getElementsByTagName('tr').length;
 	if (open_chart <= 0) {
-		weekdays = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+		daysofweek = ['Su','Mo','Tu','We','Th','Fr','Sa'];
 		var week_row = week_days.insertRow(week_days.rows.length);
 		for (i = 0; i< 7; i++) {
 			var newcell = week_row.insertCell(i);
-			var newText = document.createTextNode(weekdays[i]);
+			var newText = document.createTextNode(daysofweek[i]);
 			newcell.appendChild(newText);
 		}
 
@@ -148,23 +165,35 @@ function buildCalTable(table,week_days,month_change,date_array) {
 		first_day_month = new Date(date_array[2], date_array[1] -1, 1);
 		last_day_month = parseInt(new Date(date_array[2], date_array[1], 0).getDate());
 		empty_cells = first_day_month.getDay();
-		var row = table.insertRow(table.rows.length);
+		var row = cal_table.insertRow(cal_table.rows.length);
 		
 		for (i = 1; i<= last_day_month+empty_cells; i++) {
 			col = (i-1) % 7;
 			if (col == 0){
-				var row = table.insertRow(table.rows.length);
+				var row = cal_table.insertRow(cal_table.rows.length);
 			}
 			var newcell = row.insertCell(col);
 			if (i > empty_cells) {
 				var daybutton = document.createElement("input");
 				daybutton.type = "button";
 				daybutton.value = i - empty_cells;
-				daybutton.id = table.id + "_" + daybutton.value;
+				daybutton.id = cal_table.id + "_" + daybutton.value;
 				daybutton.onclick = function(){
 					naming = this.id.split("_");
 					day_shower = this.id.replace('_'+naming[naming.length-2]+'_'+naming[naming.length-1],'');
 					document.getElementById(day_shower + '_day').innerHTML = this.value;
+					week_days = document.getElementById(day_shower + '_week');
+					while(week_days.hasChildNodes()) {
+					   week_days.removeChild(week_days.firstChild);
+					}
+					cal_table = document.getElementById(day_shower + '_chart');
+					while(cal_table.hasChildNodes()) {
+					   cal_table.removeChild(cal_table.firstChild);
+					}
+					month_change = document.getElementById(day_shower + '_months');
+					if (month_change.style.display!="none") {
+						month_change.style.display="none";
+					}
 				}
 				//context.appendChild(button);
 				//var newText  = document.createTextNode(i - empty_cells);
@@ -175,8 +204,8 @@ function buildCalTable(table,week_days,month_change,date_array) {
 		while(week_days.hasChildNodes()) {
 		   week_days.removeChild(week_days.firstChild);
 		}
-		while(table.hasChildNodes()) {
-		   table.removeChild(table.firstChild);
+		while(cal_table.hasChildNodes()) {
+		   cal_table.removeChild(cal_table.firstChild);
 		}
 		if (month_change.style.display!="none") {
 			month_change.style.display="none";

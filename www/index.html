@@ -13,6 +13,7 @@
 -->
     <script src="js/page_main.js"></script>
     <script src="js/ui_management.js"></script>
+    <script src="js/ls_management.js"></script>
 </HEAD>
 <BODY>
 
@@ -52,43 +53,56 @@
  
 	<div id="popup_box" style="display:none;">
 		<div class="container">
+
 				<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr>
 					<td width="100%" ><div class="header">New Entry</div></td>
 				</tr></table>	
+
                 <!--https://developers.google.com/web/fundamentals/input/form/-->
-                Date:
-                <table id="popup_date_in" class="calendar_current" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td class="cal_prev" onclick="javascript:showCalChart('popup_date_in','previous')"> < </td>
-                        <td class="cal_day" id="popup_date_in_day"onclick="javascript:showCalChart('popup_date_in','chart')">Day</td>
-                        <td class="cal_month" id="popup_date_in_month"onclick="javascript:showCalChart('popup_date_in','chart')">Month</td>
-                        <td class="cal_year" id="popup_date_in_year"onclick="javascript:showCalChart('popup_date_in','chart')">Year</td>
-                        <td class="cal_next" onclick="javascript:showCalChart('popup_date_in','next')"> > </td>
-                    </tr>
-                </table>
-                <table id="popup_date_in_week" class="calendar_weekdays" border="0" cellspacing="0" cellpadding="0">
-                </table>
-                <table id="popup_date_in_chart" class="calendar_days" border="0" cellspacing="0" cellpadding="0">
-                </table>
-                <table id="popup_date_in_months" class="calendar_months" border="0" cellspacing="0" cellpadding="0" style="display:none;">
-                    <tr>
-                        <td class="cal_prev" onclick="javascript:showCalChart('popup_date_in','prev_month')"> < </td>
-                        <td class="popup_date_in_months_name" id="popup_date_in_months_name"></td>
-                        <td class="cal_next" onclick="javascript:showCalChart('popup_date_in','next_month')"> > </td>
-                    </tr>
-                </table>
+                <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr><td width="100%" >Subject:</td></tr>
+                    <tr><td width="100%" >Date:</td></tr>
+                    <tr><td width="100%" >
+                        <table id="popup_date_in" class="calendar_current" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="cal_prev" onclick="javascript:showCalChart('popup_date_in','previous')"> < </td>
+                                <td class="cal_day" id="popup_date_in_day"onclick="javascript:showCalChart('popup_date_in','chart')">Day</td>
+                                <td class="cal_month" id="popup_date_in_month"onclick="javascript:showCalChart('popup_date_in','chart')">Month</td>
+                                <td class="cal_year" id="popup_date_in_year"onclick="javascript:showCalChart('popup_date_in','chart')">Year</td>
+                                <td class="cal_next" onclick="javascript:showCalChart('popup_date_in','next')"> > </td>
+                            </tr>
+                        </table>
+                        <table id="popup_date_in_week" class="calendar_weekdays" border="0" cellspacing="0" cellpadding="0">
+                        </table>
+                        <table id="popup_date_in_chart" class="calendar_days" border="0" cellspacing="0" cellpadding="0">
+                        </table>
+                        <table id="popup_date_in_months" class="calendar_months" border="0" cellspacing="0" cellpadding="0" style="display:none;">
+                            <tr>
+                                <td class="cal_prev" onclick="javascript:showCalChart('popup_date_in','prev_month')"> < </td>
+                                <td class="popup_date_in_months_name" id="popup_date_in_months_name"></td>
+                                <td class="cal_next" onclick="javascript:showCalChart('popup_date_in','next_month')"> > </td>
+                            </tr>
+                        </table>
+                    </td></tr>
+                    <tr><td width="100%" >Time:</td></tr>
+                    <tr><td width="100%" >End Date:</td></tr>
+                    <tr><td width="100%" >End Time:</td></tr>
+                    <tr><td width="100%" >All Day Event(yes/no):</td></tr>
+                    <tr><td width="100%" >Description:</td></tr>
+                    <tr><td width="100%" >Location:</td></tr>
+                    <tr><td width="100%" >Private(yes/no):</td></tr>
+
                 <!--
                 Date: <input type="date" class="date_in" id"date_in" /><br /><br />
                 Time: <input type="time" class="time_in" id"time_in" /><br /><br /> 
                 -->
-
                 <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" >
                     <tr>
                         <td >
                             <input class="btn_close" id"btn_close" type="submit" value="Close" onclick="javascript:closePopup('popup_box')">
                         </td>
                         <td >
-                            <input class="btn_save" id"btn_save" type="submit" value="Save" onclick="javascript:closePopup('popup_box')">
+                            <input class="btn_save" id"btn_save" type="submit" value="Save" onclick="javascript:savePopup('popup_box')">
                         </td>
                     </tr></table>
                 </div>
